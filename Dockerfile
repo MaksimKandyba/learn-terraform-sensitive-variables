@@ -8,4 +8,3 @@ RUN find /var/www -type d -exec chmod 2775 {} \;
 RUN find /var/www -type f -exec chmod 0664 {} \;
 RUN echo "hi from html" > /var/www/html/index.html
 RUN printf "<?php\n  \$hi = \"hi from php\n\";\n  echo \$hi;\n?>" > /var/www/html/index.php
-
