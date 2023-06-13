@@ -57,3 +57,21 @@ variable "interpreter" {
   type        = string
   default     = "bash"
 }
+
+variable "db_username" {
+  description = "Database administrator username"
+  type        = string
+  sensitive   = true
+}
+
+variable "db_password" {
+  description = "Database administrator password"
+  type        = string
+  sensitive   = true
+}
+
+variable "db_root_password" {
+  description = "Database root password"
+  type        = string
+  sensitive   = true
+}

@@ -36,9 +36,9 @@ resource "fly_machine" "db" {
   ]
   env = {
     MYSQL_DATABASE      = "some_db"
-    MYSQL_USER          = "admin"
-    MYSQL_PASSWORD      = "notasecurepassword"
-    MYSQL_ROOT_PASSWORD = "thesame"
+    MYSQL_USER          = var.db_username
+    MYSQL_PASSWORD      = var.db_password
+    MYSQL_ROOT_PASSWORD = var.db_root_password
   }
   cmd = ["--datadir /data/mysql"]
 }
