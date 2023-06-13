@@ -58,6 +58,12 @@ variable "interpreter" {
   default     = "bash"
 }
 
+variable "db_name" {
+  description = "Database name"
+  type        = string
+  default     = "some_db"
+}
+
 variable "db_username" {
   description = "Database administrator username"
   type        = string

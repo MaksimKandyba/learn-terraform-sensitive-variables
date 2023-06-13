@@ -35,7 +35,7 @@ resource "fly_machine" "db" {
     }
   ]
   env = {
-    MYSQL_DATABASE      = "some_db"
+    MYSQL_DATABASE      = var.db_name
     MYSQL_USER          = var.db_username
     MYSQL_PASSWORD      = var.db_password
     MYSQL_ROOT_PASSWORD = var.db_root_password
