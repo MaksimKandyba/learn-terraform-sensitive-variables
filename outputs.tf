@@ -29,3 +29,16 @@ output "db_memorymb" {
 output "db_volume_size_gb" {
   value = fly_volume.databaseVolume.size
 }
+
+output "db_connect_string" {
+  description = "MySQL database connection string"
+  value = join(" ",
+    [
+      "Server=${fly_app.databaseApp.name}.internal;",
+      "Database=${var.db_name};",
+      "Uid=${var.db_username};",
+      "Pwd=${var.db_password};"
+    ]
+  )
+  sensitive = true
+}
