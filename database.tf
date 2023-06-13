@@ -4,10 +4,11 @@ resource "fly_app" "databaseApp" {
 }
 
 resource "fly_volume" "databaseVolume" {
-  name   = "kandyba_mysql_volume"
-  app    = "kandyba-mysql"
-  size   = 1
-  region = var.fly_region
+  name       = "kandyba_mysql_volume"
+  app        = "kandyba-mysql"
+  size       = 1
+  region     = var.fly_region
+  depends_on = [fly_app.databaseApp]
 }
 
 resource "null_resource" "unmount_db_volume_in_bg" {
